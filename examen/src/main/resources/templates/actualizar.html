@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>actualizar nombre</title>
+</head>
+<body>
+	<main>
+		<div>
+		
+			<h2>ACTUALIZAR NOMBRE</h2>
+			<form th:action="@{/actualizar}" method="POST">
+			<input type="text" th:value="${usuario.id}" name="id" hidden/>
+				<label >Usuario</label>
+				 <input type="text" name="username" th:value="${usuario.nombre}"/><br>
+				    <input class="btn btn-primary" type="submit"value="actualizar">
+			</form>
+		</div>
+	</main>
+	<footer>
+	 </footer>
+</body>
+</html>

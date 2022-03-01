@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>REGISTRO</title>
+</head>
+<body>
+	<main>
+		<div>
+		
+			<h2>REGISTRO</h2>
+			<form th:action="@{/signup}" method="POST">
+				<label >Usuario</label>
+				 <input type="text" name="nombre"/><br>
+				 <label >Password</label>
+				  <input  type="password" name="contrasenna"  /><br>
+				    <input class="btn btn-primary" type="submit"value="Registrar">
+			</form>
+		</div>
+	</main>
+	<footer>
+	 </footer>
+</body>
+</html>

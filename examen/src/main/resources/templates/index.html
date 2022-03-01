@@ -1,0 +1,31 @@
+<html>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />
+
+<li class="nav-item"><a class="btn btn-outline-success" th:href="@{/signup}">Registrarse <span
+			class="visually-hidden">(current)</span></a></li>
+<li class="nav-item"><a class="btn btn-outline-primary" th:href="@{/login}">Loguearse <span
+			class="visually-hidden">(current)</span></a></li>
+
+<div sec:authorize="isAuthenticated()">
+	<ul class="navbar-nav me-d">
+		<li class="nav-item"><a class="btn btn-outline-danger" th:href="@{/logout}">Log out <span
+					class="visually-hidden">(current)</span></a></li>
+	</ul>
+</div>
+
+<div sec:authorize="hasAuthority('Admin')">
+	<p>ROLE DE ADMIN</p>
+</div><div sec:authorize="hasAuthority('Cliente')">
+	<p>ROLE DE CLIENTE</p>
+</div>
+<div sec:authorize="isAuthenticated()">
+	<ul class="navbar-nav me-d">
+		<li class="nav-item"><a class="btn btn-outline-primary" th:href="@{/perfil/{id} (id=${session.idUsuario})}">Perfil <span
+					class="visually-hidden">(current)</span></a></li>
+	</ul>
+</div >
+<div th:each="usuarios :${usuarios}">
+	<a th:text="${usuarios.nombre}"></a> 
+<div>
+
+</html>
